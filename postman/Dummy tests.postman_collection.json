@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "43a856ca-2448-45c7-b73f-7f40c7c4c466",
+		"name": "Dummy tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Lists of all tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}",
+					"host": [
+						"{{baseUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve single data by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/:task_id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						":task_id"
+					],
+					"query": [
+						{
+							"key": "mnbcz",
+							"value": "adas,jgad",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "task_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a single data",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/:task_id/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						":task_id",
+						""
+					],
+					"query": [
+						{
+							"key": "mnbcz",
+							"value": "adas,jgad",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "task_id",
+							"value": "14"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a single data Copy",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "personal",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "{{$randomPhrase}}",
+							"type": "text"
+						},
+						{
+							"key": "remainder",
+							"value": "2022-04-14T17:26:29.062635Z",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/:task_id/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						":task_id",
+						""
+					],
+					"query": [
+						{
+							"key": "mnbcz",
+							"value": "adas,jgad",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "task_id",
+							"value": "14"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adding new data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"Office\",\r\n    \"title\": \"API test1\", \r\n    \"description\": \"This field is required.\\nThis field is required.This field is required.\\tThis field is required.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adding new data 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "type",
+							"value": "Shopping",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "Hellow",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "This field is required.\nThis field is required.\nThis field is required.\nThis field is required.",
+							"type": "text"
+						},
+						{
+							"key": "finised",
+							"value": "True",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://127.0.0.1:8000/GenericView"
+		}
+	]
+}
